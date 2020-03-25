@@ -99,3 +99,49 @@ printMyNameArrow("Alejandro", 33);
 const timesTwo = (number) => number * 2;
 
 console.log(timesTwo(4));
+
+
+
+//#############################################################################
+
+// Lecture 16 - Understanding Classes
+
+
+class Human {
+  //class constructor 
+  constructor() {
+    this.gender = "unset"; //setting an property
+  }
+
+  //methods
+  printGender = () => {
+    console.log(this.gender);
+  }
+}
+
+
+//inherits Human
+class Person extends Human {
+  constructor() {
+    // super() executes the parent constructor first,
+    // else, ReferenceError is raised
+    super();
+
+    //setting properties
+    this.name = "Omar";
+    this.gender = "male"
+  }
+
+  //methods
+  walk = () => {
+    console.log("Person is walking");
+  }
+}
+
+
+//instantiating a class
+const somePerson = new Person();
+
+console.log(somePerson.name) //access property
+somePerson.printGender();
+somePerson.walk(); //run methods

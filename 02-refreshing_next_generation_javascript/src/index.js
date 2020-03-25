@@ -2,6 +2,39 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
+//#############################################################################
+
+// Lecture 15 - Exports and Imports (Modules)
+
+// Warning: imports should be at the beggining of the file 
+// (hence this lecture here)
+// Warning2: import statement is ES6 syntax, 
+// produces 'Uncaught syntax error' in vanilla javascript
+
+// DEFAULT EXPORT
+// import will always refer to the export marked as default (see person.js)
+import person from './person.js';
+import personAsAlias from './person.js';
+
+// NAMED EXPORT
+// uses { } to specifically target exports from utility.js by it's name
+import { baseData } from './utility.js';
+import { clean } from './utility.js';
+
+// assign aliases
+import { clean as EmptyFunction } from './utility.js'
+
+// if there's multiple named exports in the file (utility.js)
+import * as bundled from './utility.js';
+
+// can be accesed like:
+console.log(bundled.baseData);
+console.log(bundled.clean());
+
+//#############################################################################
+
+
+
 class Section02 extends React.Component {
   render() {
     return (

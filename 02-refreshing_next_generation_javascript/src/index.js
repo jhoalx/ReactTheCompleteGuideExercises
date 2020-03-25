@@ -105,14 +105,12 @@ console.log(timesTwo(4));
 //#############################################################################
 
 // Lecture 16 - Understanding Classes
+// Lecture 17 - Classes, Properties and Methods (update code to ES6/Babel)
 
 
 class Human {
-  //class constructor 
-  constructor() {
-    this.gender = "unset"; //setting an property
-  }
-
+  gender = "unset"; //setting an property
+  
   //methods
   printGender = () => {
     console.log(this.gender);
@@ -122,15 +120,8 @@ class Human {
 
 //inherits Human
 class Person extends Human {
-  constructor() {
-    // super() executes the parent constructor first,
-    // else, ReferenceError is raised
-    super();
-
-    //setting properties
-    this.name = "Omar";
-    this.gender = "male"
-  }
+  name = "Omar";
+  gender = "male"
 
   //methods
   walk = () => {

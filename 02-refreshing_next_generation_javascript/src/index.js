@@ -38,3 +38,31 @@ const myLastName = "Zapata";
 //myLastName = "Roldan"; // Uncaught TypeError: Assignment to constant variable
 //previous line stops script execution if uncommented
 console.log(myLastName); //execution wont make it here
+
+
+
+//#############################################################################
+
+// Lecture 14 - Arrow Functions
+
+// Normal function
+function printMyName(name) {
+  console.log(name)
+}
+
+printMyName(); //undefined
+printMyName("John");
+
+
+
+// Arrow function
+const printMyNameArrow = (name, age) => {
+  console.log(name, age);
+}
+
+printMyNameArrow("Alejandro", 33);
+
+// alternative syntax for simple functions (1 line)
+const timesTwo = (number) => number * 2;
+
+console.log(timesTwo(4));

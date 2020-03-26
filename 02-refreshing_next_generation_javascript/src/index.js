@@ -179,12 +179,48 @@ let num1, num2, num3, num4;
 [num1, num2] = threeNums;
 console.log(num1, num2);
 
-[ , num2, , num4] = threeNums;
+[, num2, , num4] = threeNums;
 console.log(num2, num4);
 
 
 
 // Object Destructuring
-const mother = { name: 'white', age: 50, location:'home' }
-const {name, location} = mother
+const mother = { name: 'white', age: 50, location: 'home' }
+const { name, location } = mother
 console.log(name, location)
+
+
+
+//#############################################################################
+
+// Lecture 20 - Reference and Primitive Types Refresher
+
+// PRIMITIVE TYPES
+// The in-memory value of a primitive type is it's actual value 
+// (e.g. boolean true, number 42). 
+// A primitive type can be stored in the fixed amount of memory available.
+
+// null, undefined, Boolean, Number, String
+
+// Primitive types are also known as: scalar types or simple types.
+
+var a = 13         // assign `13` to `a`
+var b = a          // copy the value of `a` to `b`
+b = 37             // assign `37` to `b`
+console.log(a)     // => 13
+
+// REFERENCE TYPES
+// A reference type can contain other values. Since the contents of a
+// reference type can not fit in the fixed amount of memory available for 
+// a variable, the in-memory value of a reference type 
+// is the reference itself (a memory address).
+
+// Array
+// Object
+// Function
+// Reference types are also known as: complex types or container types.
+
+var a = { c: 13 }  // assign the reference of a new object to `a`
+var b = a          // copy the reference of object inside `a` to new var `b`
+b.c = 37           // modify the contents of the object `b` refers to
+console.log(a)     // => { c: 37 }

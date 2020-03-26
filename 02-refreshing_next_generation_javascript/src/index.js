@@ -39,7 +39,7 @@ class Section02 extends React.Component {
   render() {
     return (
       <div>
-        <h1>Checkout Console</h1>
+        <h1>Check Out The Console</h1>
       </div>
     );
   }
@@ -110,7 +110,7 @@ console.log(timesTwo(4));
 
 class Human {
   gender = "unset"; //setting an property
-  
+
   //methods
   printGender = () => {
     console.log(this.gender);
@@ -136,3 +136,30 @@ const somePerson = new Person();
 console.log(somePerson.name) //access property
 somePerson.printGender();
 somePerson.walk(); //run methods
+
+
+//#############################################################################
+
+// Lecture 18 - The Spread & Rest Operator ("..." three dots)
+
+// wether is spread or rest depends where it's used
+
+// Spread: 
+// Used to split up array elements OR object properties
+let oldArray = [0, 1, 2];
+const newArray = [...oldArray, 3, 4];
+
+let oldObject = new Person();
+const newObject = { ...oldObject, newProp: 5 }
+
+console.log(newArray);
+console.log(newObject);
+
+// Rest: 
+// Used to merge a list of function arguments into an array
+
+function filterOne(...argsArray) {
+  return argsArray.filter(el => el === 1);
+}
+
+console.log(filterOne(1, 100, 20));

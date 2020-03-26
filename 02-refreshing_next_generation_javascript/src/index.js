@@ -224,3 +224,20 @@ var a = { c: 13 }  // assign the reference of a new object to `a`
 var b = a          // copy the reference of object inside `a` to new var `b`
 b.c = 37           // modify the contents of the object `b` refers to
 console.log(a)     // => { c: 37 }
+
+
+
+//#############################################################################
+
+// Lecture 21 - Refreshing Array Functions
+
+// map, pop, push, shift, unshift
+
+const moreNumbers = [10, 20, 30]
+
+const doubleNumArray = moreNumbers.map((num) => {
+  return num * 2;
+});
+
+console.log(moreNumbers);
+console.log(doubleNumArray);

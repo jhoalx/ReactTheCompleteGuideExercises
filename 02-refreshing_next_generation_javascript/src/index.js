@@ -163,3 +163,28 @@ function filterOne(...argsArray) {
 }
 
 console.log(filterOne(1, 100, 20));
+
+
+//#############################################################################
+
+// Lecture 19 - Destructuring
+
+// Easily extract arrtasy elements or object properties
+// and store them in variables
+
+// Array Destructuring
+const threeNums = [1, 2, 3, 4];
+let num1, num2, num3, num4;
+
+[num1, num2] = threeNums;
+console.log(num1, num2);
+
+[ , num2, , num4] = threeNums;
+console.log(num2, num4);
+
+
+
+// Object Destructuring
+const mother = { name: 'white', age: 50, location:'home' }
+const {name, location} = mother
+console.log(name, location)

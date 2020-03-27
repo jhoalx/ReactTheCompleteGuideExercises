@@ -19,4 +19,19 @@ ReactDOM.render(
 
 //#############################################################################
 
-// Lecture 25 - Module Introduction
+// Lecture 26 - The Build Workflow
+
+/*
+  Recommended for SPAs and MPAs
+
+  ¿WHY?
+  - Optimize Code
+  - Use Next-Gen JavaScript Features
+  - Be More Productive
+
+  ¿HOW?
+  - Use Dependency Management Tool like npm or yarn
+  - Use Bundler: Reccommended: Webpack
+  - Use Compiler (Next-Gen Javascript): Babel + Presets
+  - Use a Development Server: Local
+  */

@@ -4,10 +4,25 @@ import './index.css';
 
 class Section03 extends React.Component {
   render() {
+
+    // Lecture 30 - Understanding JSX
+
+    // Syntactic Sugar (JSX)
     return (
-      <div>
+      <div className="example">
         <h1>Check Out The Console</h1>
       </div>
+    );
+
+    //this is the exact equivalent to the code commented above
+    return React.createElement(
+      'div',
+      {className: 'example'},
+      React.createElement(
+        'h1',
+         null,
+         'Check Out The Console'
+      )
     );
   }
 }

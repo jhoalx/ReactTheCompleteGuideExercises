@@ -19,11 +19,11 @@ class Section03 extends React.Component {
     //this is the exact equivalent to the code commented above
     return React.createElement(
       'div',
-      {className: 'example'}, //configuration is a javascript object
+      { className: 'example' }, //configuration is a javascript object
       React.createElement(
         'h1',
-         null,
-         'Check Out The Console'
+        null,
+        'Check Out The Console'
       )
     );
   }
@@ -60,4 +60,4 @@ ReactDOM.render(
   // must use className attribute instead of reserved word class in JSX(html)
   // JSX Expression must have only 1 root element.
 
-  
+

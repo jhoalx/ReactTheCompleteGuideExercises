@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
+import Person from './Person/Person'
 
 class Section03 extends React.Component {
   render() {
@@ -11,6 +12,7 @@ class Section03 extends React.Component {
     return (
       <div className="example">
         <h1>Check Out The Console</h1>
+        <Person /> {/* self closing, no need to nest elements right now */}
       </div>
     );
 

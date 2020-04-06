@@ -13,6 +13,10 @@ class Section03 extends React.Component {
       <div className="example">
         <h1>Check Out The Console</h1>
         <Person /> {/* self closing, no need to nest elements right now */}
+
+        {/* Lecture 34 - Working with Components & Re-Using them */}
+        <Person />
+        <Person />
       </div>
     );
 

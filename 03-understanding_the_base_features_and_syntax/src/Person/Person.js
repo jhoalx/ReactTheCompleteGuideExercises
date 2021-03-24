@@ -17,7 +17,10 @@ with a state or lifecycle hooks with HOCs!ʺ
 import React from 'react'
 
 const person = () => {
-    return <p>I'm a Person!</p>
+  // Lecture 35 - Outputting Dynamic Content
+  // The curly braces are a special syntax to let the JSX parser know that it needs to
+  // interpret the contents in between them as JavaScript instead of a string
+  return <p>I'm a Person and I am {Math.floor(Math.random() * 30)} years old!</p>
 };
 
 export default person;

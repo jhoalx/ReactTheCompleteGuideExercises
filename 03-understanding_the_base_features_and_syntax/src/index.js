@@ -14,7 +14,15 @@ class Section03 extends React.Component {
   }
 
   switchNameHandler = () => {
-    console.log("Clicked");
+    // Lecture 42 - Manipulating the State
+    // this.state.persons[0].name = "Alejandro"; //DO NOT DO THIS
+    this.setState({
+      persons: [
+        {name: "Alejandro", age: 34},
+        {name: "Laura", age: 14},
+        {name: "Blanca", age: 56}
+      ]
+    })
   }
 
   render() {
@@ -29,7 +37,7 @@ class Section03 extends React.Component {
 
           {/* Lecture 41 - To which Events Can You Listen:
            https://reactjs.org/docs/events.html#supported-events */}
-          
+
 
           <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/> {/* self closing, no need to nest elements right now */}
           {/* Lecture 34 - Working with Components & Re-Using them */}

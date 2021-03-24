@@ -4,20 +4,27 @@ import './index.css';
 import Person from './Person/Person'
 
 class Section03 extends React.Component {
+  // Lecture 38 - Understanding & Using State
+  state = {
+    persons: [
+      {name: "Jhon", age: 34},
+      {name: "Laura", age: 14},
+      {name: "Blanca", age: 56}
+    ]
+  }
+
   render() {
-
     // Lecture 30 - Understanding JSX
-
     // Syntactic Sugar (JSX)
     return (
         <div className="example">
           <h1>Check Out The Console</h1>
-          <Person name={"Jhon"} age={34}/> {/* self closing, no need to nest elements right now */}
+          <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/> {/* self closing, no need to nest elements right now */}
 
           {/* Lecture 34 - Working with Components & Re-Using them */}
-          <Person name={"Laura"} age={14}/>
+          <Person name={this.state.persons[1].name} age={this.state.persons[1].age}/>
           {/* Lecture 37 - Understanding the "children" prop */}
-          <Person name={"Blanca"} age={56}>Business: Heladería Blanca's</Person>
+          <Person name={this.state.persons[2].name} age={this.state.persons[2].age}>Business: Heladería Blanca's</Person>
         </div>
     );
 

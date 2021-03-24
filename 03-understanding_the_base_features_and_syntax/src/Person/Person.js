@@ -21,7 +21,14 @@ const person = (props) => {
   // Lecture 35 - Outputting Dynamic Content
   // The curly braces are a special syntax to let the JSX parser know that it needs to
   // interpret the contents in between them as JavaScript instead of a string
-  return <p>I'm {props.name} and I am {props.age} years old!</p>
+  return (
+      <div>
+        <p>I'm {props.name} and I am {props.age} years old!</p>
+        {/* Lecture 37 - Understanding the "children" prop */}
+        <p>{props.children}</p>
+        <hr/>
+      </div>
+  )
 };
 
 export default person;

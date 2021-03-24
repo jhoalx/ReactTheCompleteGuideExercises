@@ -16,7 +16,8 @@ class Section03 extends React.Component {
 
           {/* Lecture 34 - Working with Components & Re-Using them */}
           <Person name={"Laura"} age={14}/>
-          <Person name={"Blanca"} age={56}/>
+          {/* Lecture 37 - Understanding the "children" prop */}
+          <Person name={"Blanca"} age={56}>Business: Heladería Blanca's</Person>
         </div>
     );
 

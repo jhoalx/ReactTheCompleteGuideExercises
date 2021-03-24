@@ -10,32 +10,32 @@ class Section03 extends React.Component {
 
     // Syntactic Sugar (JSX)
     return (
-      <div className="example">
-        <h1>Check Out The Console</h1>
-        <Person /> {/* self closing, no need to nest elements right now */}
+        <div className="example">
+          <h1>Check Out The Console</h1>
+          <Person name={"Jhon"} age={34}/> {/* self closing, no need to nest elements right now */}
 
-        {/* Lecture 34 - Working with Components & Re-Using them */}
-        <Person />
-        <Person />
-      </div>
+          {/* Lecture 34 - Working with Components & Re-Using them */}
+          <Person name={"Laura"} age={14}/>
+          <Person name={"Blanca"} age={56}/>
+        </div>
     );
 
     //this is the exact equivalent to the code commented above
     return React.createElement(
-      'div',
-      { className: 'example' }, //configuration is a javascript object
-      React.createElement(
-        'h1',
-        null,
-        'Check Out The Console'
-      )
+        'div',
+        {className: 'example'}, //configuration is a javascript object
+        React.createElement(
+            'h1',
+            null,
+            'Check Out The Console'
+        )
     );
   }
 }
 
 ReactDOM.render(
-  <Section03 />,
-  document.getElementById('root')
+    <Section03/>,
+    document.getElementById('root')
 );
 
 //#############################################################################
@@ -57,11 +57,11 @@ ReactDOM.render(
   - Use a Development Server: Local
   */
 
-  //#############################################################################
+//#############################################################################
 
-  // Lecture 30 - JSX Restrictions
+// Lecture 30 - JSX Restrictions
 
-  // must use className attribute instead of reserved word class in JSX(html)
-  // JSX Expression must have only 1 root element.
+// must use className attribute instead of reserved word class in JSX(html)
+// JSX Expression must have only 1 root element.
 
 

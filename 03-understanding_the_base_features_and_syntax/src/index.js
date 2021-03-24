@@ -27,6 +27,10 @@ class Section03 extends React.Component {
           {/* Lecture 40 - Handling Events with Methods */}
           <button onClick={this.switchNameHandler}>Switch Name</button>
 
+          {/* Lecture 41 - To which Events Can You Listen:
+           https://reactjs.org/docs/events.html#supported-events */}
+          
+
           <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/> {/* self closing, no need to nest elements right now */}
           {/* Lecture 34 - Working with Components & Re-Using them */}
           <Person name={this.state.persons[1].name} age={this.state.persons[1].age}/>

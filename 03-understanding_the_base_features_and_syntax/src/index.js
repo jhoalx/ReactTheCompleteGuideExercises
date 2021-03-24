@@ -13,14 +13,21 @@ class Section03 extends React.Component {
     ]
   }
 
+  switchNameHandler = () => {
+    console.log("Clicked");
+  }
+
   render() {
     // Lecture 30 - Understanding JSX
     // Syntactic Sugar (JSX)
     return (
         <div className="example">
           <h1>Check Out The Console</h1>
-          <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/> {/* self closing, no need to nest elements right now */}
 
+          {/* Lecture 40 - Handling Events with Methods */}
+          <button onClick={this.switchNameHandler}>Switch Name</button>
+
+          <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/> {/* self closing, no need to nest elements right now */}
           {/* Lecture 34 - Working with Components & Re-Using them */}
           <Person name={this.state.persons[1].name} age={this.state.persons[1].age}/>
           {/* Lecture 37 - Understanding the "children" prop */}

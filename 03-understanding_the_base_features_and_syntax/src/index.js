@@ -36,6 +36,15 @@ class Section03 extends React.Component {
   }
 
   render() {
+    // Lecture 49 - Working with Inline Styles
+    const myButtonStyle = {
+      backgroundColor: "aquamarine",
+      font: "inherit",
+      border: "1px solid blue",
+      padding: "8px",
+      cursor: "pointer"
+    }
+
     // Lecture 30 - Understanding JSX
     // Syntactic Sugar (JSX)
     return (
@@ -44,7 +53,9 @@ class Section03 extends React.Component {
 
           {/* Lecture 40 - Handling Events with Methods */}
           {/* Lecture 46 - Passing Method References Between Components, recommended way */}
-          <button onClick={this.switchNameHandler.bind(this, "Button")}>Switch Name</button>
+          <button
+              style={myButtonStyle}
+              onClick={this.switchNameHandler.bind(this, "Button")}>Switch Name</button>
 
           {/* Lecture 41 - To which Events Can You Listen:
            https://reactjs.org/docs/events.html#supported-events */}

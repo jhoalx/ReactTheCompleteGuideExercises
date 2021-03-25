@@ -13,12 +13,12 @@ class Section03 extends React.Component {
     ]
   }
 
-  switchNameHandler = () => {
+  switchNameHandler = (newName) => {
     // Lecture 42 - Manipulating the State
     // this.state.persons[0].name = "Alejandro"; //DO NOT DO THIS
     this.setState({
       persons: [
-        {name: "Alejandro", age: 34},
+        {name: newName, age: 34},
         {name: "Laura", age: 14},
         {name: "Blanca", age: 56}
       ]
@@ -33,17 +33,26 @@ class Section03 extends React.Component {
           <h1>Check Out The Console</h1>
 
           {/* Lecture 40 - Handling Events with Methods */}
-          <button onClick={this.switchNameHandler}>Switch Name</button>
+          {/* Lecture 46 - Passing Method References Between Components, recommended way */}
+          <button onClick={this.switchNameHandler.bind(this, "Button")}>Switch Name</button>
 
           {/* Lecture 41 - To which Events Can You Listen:
            https://reactjs.org/docs/events.html#supported-events */}
 
-
-          <Person name={this.state.persons[0].name} age={this.state.persons[0].age}/> {/* self closing, no need to nest elements right now */}
+          {/* Lecture 46 - Passing Method References Between Components, inefficient way */}
+          <Person
+              name={this.state.persons[0].name}
+              age={this.state.persons[0].age}
+              clickEventHandler={() => this.switchNameHandler("Paragraph")}/> {/* self closing, no need to nest elements right now */}
           {/* Lecture 34 - Working with Components & Re-Using them */}
-          <Person name={this.state.persons[1].name} age={this.state.persons[1].age}/>
+          <Person
+              name={this.state.persons[1].name}
+              age={this.state.persons[1].age}/>
           {/* Lecture 37 - Understanding the "children" prop */}
-          <Person name={this.state.persons[2].name} age={this.state.persons[2].age}>Business: Heladería Blanca's</Person>
+          <Person
+              name={this.state.persons[2].name}
+              age={this.state.persons[2].age}>Business: Heladería Blanca's
+          </Person>
         </div>
     );
 

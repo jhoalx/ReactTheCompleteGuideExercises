@@ -23,7 +23,7 @@ const person = (props) => {
   // interpret the contents in between them as JavaScript instead of a string
   return (
       <div>
-        <p>I'm {props.name} and I am {props.age} years old!</p>
+        <p onClick={props.clickEventHandler}>I'm {props.name} and I am {props.age} years old!</p>
         {/* Lecture 37 - Understanding the "children" prop */}
         <p>{props.children}</p>
         <hr/>

@@ -26,6 +26,8 @@ const person = (props) => {
         <p onClick={props.clickEventHandler}>I'm {props.name} and I am {props.age} years old!</p>
         {/* Lecture 37 - Understanding the "children" prop */}
         <p>{props.children}</p>
+        {/* Lecture 47 - Adding Two Way Binding */}
+        <input type="text" onChange={props.nameChangeHandler} value={props.name}/>
         <hr/>
       </div>
   )

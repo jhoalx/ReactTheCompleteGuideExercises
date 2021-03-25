@@ -25,6 +25,16 @@ class Section03 extends React.Component {
     })
   }
 
+  nameChangedHandler = (event) => {
+    this.setState({
+      persons: [
+        {name: "Jhon", age: 34},
+        {name: event.target.value, age: 14},
+        {name: "Blanca", age: 56}
+      ]
+    })
+  }
+
   render() {
     // Lecture 30 - Understanding JSX
     // Syntactic Sugar (JSX)
@@ -45,9 +55,11 @@ class Section03 extends React.Component {
               age={this.state.persons[0].age}
               clickEventHandler={() => this.switchNameHandler("Paragraph")}/> {/* self closing, no need to nest elements right now */}
           {/* Lecture 34 - Working with Components & Re-Using them */}
+          {/* Lecture 47 - Adding Two Way Binding */}
           <Person
               name={this.state.persons[1].name}
-              age={this.state.persons[1].age}/>
+              age={this.state.persons[1].age}
+              nameChangeHandler={this.nameChangedHandler}/>
           {/* Lecture 37 - Understanding the "children" prop */}
           <Person
               name={this.state.persons[2].name}

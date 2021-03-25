@@ -16,19 +16,21 @@ with a state or lifecycle hooks with HOCs!ʺ
 
 import React from 'react'
 
+// Lecture 48 - Adding Styling with Stylesheets
+import "./Person.css"
+
 // Lecture 36 - Working with Props
 const person = (props) => {
   // Lecture 35 - Outputting Dynamic Content
   // The curly braces are a special syntax to let the JSX parser know that it needs to
   // interpret the contents in between them as JavaScript instead of a string
   return (
-      <div>
+      <div className={"Person"}>
         <p onClick={props.clickEventHandler}>I'm {props.name} and I am {props.age} years old!</p>
         {/* Lecture 37 - Understanding the "children" prop */}
         <p>{props.children}</p>
         {/* Lecture 47 - Adding Two Way Binding */}
         <input type="text" onChange={props.nameChangeHandler} value={props.name}/>
-        <hr/>
       </div>
   )
 };

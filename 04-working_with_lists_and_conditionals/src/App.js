@@ -45,6 +45,27 @@ class Section04 extends React.Component {
       cursor: "pointer"
     }
 
+    // Lecture 54 - Handling Dynamic Content "The Javascript Way"
+    let persons = null;
+    if (this.state.showPersons) {
+      persons = (
+          <div>
+            <Person
+                name={this.state.persons[0].name}
+                age={this.state.persons[0].age}
+                clickEventHandler={() => this.switchNameHandler("Paragraph")}/> {/* self closing, no need to nest elements right now */}
+            <Person
+                name={this.state.persons[1].name}
+                age={this.state.persons[1].age}
+                nameChangeHandler={this.nameChangedHandler}/>
+            <Person
+                name={this.state.persons[2].name}
+                age={this.state.persons[2].age}>Business: Heladería Blanca's
+            </Person>
+          </div>
+      )
+    }
+
     return (
         <div className="App">
           <h1>Check Out The Console</h1>
@@ -54,25 +75,8 @@ class Section04 extends React.Component {
               onClick={this.togglePersonsHandler}>Toggle Persons
           </button>
 
-          {/* Lecture 53 - Rendering Content Conditionally*/}
-          {
-            this.state.showPersons ?
-            <div>
-              <Person
-                  name={this.state.persons[0].name}
-                  age={this.state.persons[0].age}
-                  clickEventHandler={() => this.switchNameHandler("Paragraph")}/> {/* self closing, no need to nest elements right now */}
-              <Person
-                  name={this.state.persons[1].name}
-                  age={this.state.persons[1].age}
-                  nameChangeHandler={this.nameChangedHandler}/>
-              <Person
-                  name={this.state.persons[2].name}
-                  age={this.state.persons[2].age}>Business: Heladería Blanca's
-              </Person>
-            </div>
-            : null
-          }
+          {/* Lecture 53 - Rendering Content Conditionally */}
+          {persons}
         </div>
     );
   }

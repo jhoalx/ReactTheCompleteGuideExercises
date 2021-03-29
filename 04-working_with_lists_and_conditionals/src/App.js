@@ -50,6 +50,14 @@ class Section04 extends React.Component {
     if (this.state.showPersons) {
       persons = (
           <div>
+            {/* Lecture 56 - Outputting Lists */}
+            {this.state.persons.map(person => {
+              return <Person
+                  name={person.name}
+                  age={person.age}
+              />
+            })}
+
             <Person
                 name={this.state.persons[0].name}
                 age={this.state.persons[0].age}

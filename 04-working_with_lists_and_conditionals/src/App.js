@@ -12,14 +12,10 @@ class Section04 extends React.Component {
     showPersons: false
   }
 
-  switchNameHandler = (newName) => {
-    this.setState({
-      persons: [
-        {name: newName, age: 34},
-        {name: "Laura", age: 14},
-        {name: "Blanca", age: 56}
-      ]
-    })
+  deletePersonHandler = (personIndex) => {
+    const persons = this.state.persons;
+    persons.splice(personIndex,1);
+    this.setState({ persons: persons})
   }
 
   nameChangedHandler = (event) => {
@@ -51,17 +47,19 @@ class Section04 extends React.Component {
       persons = (
           <div>
             {/* Lecture 56 - Outputting Lists */}
-            {this.state.persons.map(person => {
+            {/* Lecture 57 - Lists & State */}
+            {this.state.persons.map((person, index) => {
               return <Person
                   name={person.name}
                   age={person.age}
+                  clickEventHandler={this.deletePersonHandler.bind(this, index)}
               />
             })}
 
-            <Person
+            {/*<Person
                 name={this.state.persons[0].name}
                 age={this.state.persons[0].age}
-                clickEventHandler={() => this.switchNameHandler("Paragraph")}/> {/* self closing, no need to nest elements right now */}
+                clickEventHandler={() => this.switchNameHandler("Paragraph")}/>
             <Person
                 name={this.state.persons[1].name}
                 age={this.state.persons[1].age}
@@ -69,7 +67,7 @@ class Section04 extends React.Component {
             <Person
                 name={this.state.persons[2].name}
                 age={this.state.persons[2].age}>Business: Heladería Blanca's
-            </Person>
+            </Person>*/}
           </div>
       )
     }

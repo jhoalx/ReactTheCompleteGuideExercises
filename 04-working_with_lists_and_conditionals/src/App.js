@@ -20,13 +20,22 @@ class Section04 extends React.Component {
     this.setState({persons: persons})
   }
 
-  nameChangedHandler = (event) => {
+  nameChangedHandler = (event, id) => {
+    const personIndex = this.state.persons.findIndex((person) => {
+      return person.id === id;
+    })
+
+    const personToUpdate = {
+      ...this.state.persons[personIndex]
+    }
+
+    personToUpdate.name = event.target.value;
+
+    const updatedPersonsArray = [...this.state.persons];
+    updatedPersonsArray[personIndex] = personToUpdate;
+
     this.setState({
-      persons: [
-        {id: 1, name: "Jhon", age: 34},
-        {id: 2, name: event.target.value, age: 14},
-        {id: 3, name: "Blanca", age: 56}
-      ]
+      persons: updatedPersonsArray
     })
   }
 
@@ -51,12 +60,14 @@ class Section04 extends React.Component {
             {/* Lecture 56 - Outputting Lists */}
             {/* Lecture 57 - Lists & State */}
             {/* Lecture 59 - Lists & Keys */}
+            {/* Lecture 60 - Flexible Lists */}
             {this.state.persons.map((person, index) => {
               return <Person
                   name={person.name}
                   age={person.age}
                   clickEventHandler={this.deletePersonHandler.bind(this, index)}
                   key={person.id}
+                  nameChangeHandler={(event) => this.nameChangedHandler(event, person.id)}
               />
             })}
 

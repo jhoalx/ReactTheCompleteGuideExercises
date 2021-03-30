@@ -5,9 +5,9 @@ import Person from "./Person/Person"
 class Section04 extends React.Component {
   state = {
     persons: [
-      {name: "Jhon", age: 34},
-      {name: "Laura", age: 14},
-      {name: "Blanca", age: 56}
+      {id: 1, name: "Jhon", age: 34},
+      {id: 2, name: "Laura", age: 14},
+      {id: 3, name: "Blanca", age: 56}
     ],
     showPersons: false
   }
@@ -16,16 +16,16 @@ class Section04 extends React.Component {
     // Lecture 58 - Updating State Immutably
     // const persons = this.state.persons.slice();
     const persons = [...this.state.persons];
-    persons.splice(personIndex,1);
-    this.setState({ persons: persons})
+    persons.splice(personIndex, 1);
+    this.setState({persons: persons})
   }
 
   nameChangedHandler = (event) => {
     this.setState({
       persons: [
-        {name: "Jhon", age: 34},
-        {name: event.target.value, age: 14},
-        {name: "Blanca", age: 56}
+        {id: 1, name: "Jhon", age: 34},
+        {id: 2, name: event.target.value, age: 14},
+        {id: 3, name: "Blanca", age: 56}
       ]
     })
   }
@@ -50,11 +50,13 @@ class Section04 extends React.Component {
           <div>
             {/* Lecture 56 - Outputting Lists */}
             {/* Lecture 57 - Lists & State */}
+            {/* Lecture 59 - Lists & Keys */}
             {this.state.persons.map((person, index) => {
               return <Person
                   name={person.name}
                   age={person.age}
                   clickEventHandler={this.deletePersonHandler.bind(this, index)}
+                  key={person.id}
               />
             })}
 

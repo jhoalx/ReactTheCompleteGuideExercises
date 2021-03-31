@@ -1,3 +1,4 @@
+import Radium from "radium";
 import './App.css';
 import React from "react";
 import Person from "./Person/Person"
@@ -42,13 +43,18 @@ class Section05 extends React.Component {
   }
 
   render() {
+    // Lecture 68 - Adding and Using Radium
     const myButtonStyle = {
       backgroundColor: "green",
       color: "white",
       font: "inherit",
       border: "1px solid blue",
       padding: "8px",
-      cursor: "pointer"
+      cursor: "pointer",
+      ':hover': {
+        backgroundColor: 'lightgreen',
+        color: 'black'
+      }
     }
 
     let persons = null;
@@ -68,7 +74,11 @@ class Section05 extends React.Component {
       )
 
       // Lecture 66 - Setting Styles Dynamically
-      myButtonStyle.backgroundColor = "red";
+      myButtonStyle.backgroundColor = "red"
+      myButtonStyle[":hover"] = {
+        backgroundColor: 'salmon',
+        color: 'white',
+      }
     }
 
     // Lecture 67 - Setting Class Names Dynamically
@@ -96,4 +106,4 @@ class Section05 extends React.Component {
   }
 }
 
-export default Section05;
+export default Radium(Section05);

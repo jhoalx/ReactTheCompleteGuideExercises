@@ -71,9 +71,20 @@ class Section05 extends React.Component {
       myButtonStyle.backgroundColor = "red";
     }
 
+    // Lecture 67 - Setting Class Names Dynamically
+    const titleClasses = [];
+    if (this.state.persons.length <= 2) {
+      titleClasses.push("red");
+    }
+    if (this.state.persons.length <= 1) {
+      titleClasses.push("bold");
+    }
+
+
     return (
         <div className="App">
           <h1>Section 05</h1>
+          <p className={titleClasses.join(" ")}>Styling React Components & Elements</p>
 
           <button
               style={myButtonStyle}

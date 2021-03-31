@@ -1,4 +1,4 @@
-import Radium from "radium";
+import Radium, { StyleRoot } from "radium";
 import './App.css';
 import React from "react";
 import Person from "./Person/Person"
@@ -92,16 +92,19 @@ class Section05 extends React.Component {
 
 
     return (
-        <div className="App">
-          <h1>Section 05</h1>
-          <p className={titleClasses.join(" ")}>Styling React Components & Elements</p>
+        // Lecture 69 - Using Radium for Media Queries
+        <StyleRoot>
+          <div className="App">
+            <h1>Section 05</h1>
+            <p className={titleClasses.join(" ")}>Styling React Components & Elements</p>
 
-          <button
-              style={myButtonStyle}
-              onClick={this.togglePersonsHandler}>Toggle Persons
-          </button>
-          {persons}
-        </div>
+            <button
+                style={myButtonStyle}
+                onClick={this.togglePersonsHandler}>Toggle Persons
+            </button>
+            {persons}
+          </div>
+        </StyleRoot>
     );
   }
 }

@@ -1,4 +1,3 @@
-import Radium, { StyleRoot } from "radium";
 import './App.css';
 import React from "react";
 import Person from "./Person/Person"
@@ -92,8 +91,6 @@ class Section05 extends React.Component {
 
 
     return (
-        // Lecture 69 - Using Radium for Media Queries
-        <StyleRoot>
           <div className="App">
             <h1>Section 05</h1>
             <p className={titleClasses.join(" ")}>Styling React Components & Elements</p>
@@ -104,9 +101,8 @@ class Section05 extends React.Component {
             </button>
             {persons}
           </div>
-        </StyleRoot>
     );
   }
 }
 
-export default Radium(Section05);
+export default Section05;

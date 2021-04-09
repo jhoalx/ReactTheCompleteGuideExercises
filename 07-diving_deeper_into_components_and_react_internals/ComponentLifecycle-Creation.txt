@@ -1,0 +1,43 @@
+Component Lifecycle - Creation.
+
+Notes:
+"Lifecycle Hooks" have absolutely nothing to do with "React Hooks"
+
+Side-Effects:
+Sending http request, or storing something in local storage, sending google analytics.
+this can impact performance and cause unnecessary re-render cycles
+
+
+constructor(props):
+    You have to call super(props) if you need to add a constructor to your class component.
+    it's not really a lifecycle hook, it's a default ES6 class feature.
+    DO: basic initialization stuff, like Set up State
+    DONT: Cause Side-Effects
+
+˅
+
+getDerivedStateFromProps(props, state)
+    whenever your props change for your class-based component, you can sync your state to them, very rare use cases
+    DO: Sync state
+    DONT: Cause Side-Effects
+
+˅
+
+render()
+    prepare & structure your JSX Code
+    DO: it's only job is to return jsx (layout your data presentation)
+    DONT: nothing that can block the rendering process: send http requests, set timeouts, etc.
+
+˅
+
+render() - of child components
+
+˅
+
+componentDidMount()
+    very important lifecycle hooks, here we can cause side effects
+    DO: Cause Side-Effects
+    DONT: dont call setState (update state), unless it's in the then block of a promise like after an http request,
+          dont call setState synchronously.
+˅
+ 

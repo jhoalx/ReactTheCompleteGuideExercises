@@ -4,6 +4,21 @@ import Persons from "../components/Persons/Persons"
 import Cockpit from "../components/Cockpit/Cockpit"
 
 class Section07 extends React.Component {
+  constructor(props) {
+    super(props);
+    console.log("[Section07.js] 1) constructor()");
+    // Lecture 90 - Component Creation Lifecycle in Action
+    // we could do this instead of setting state in line 22
+    // this.state = {
+    //   persons: [
+    //     {id: 1, name: "Jhon", age: 34},
+    //     {id: 2, name: "Laura", age: 14},
+    //     {id: 3, name: "Blanca", age: 56}
+    //   ],
+    //   showPersons: false
+    // }
+  }
+
   state = {
     persons: [
       {id: 1, name: "Jhon", age: 34},
@@ -11,6 +26,15 @@ class Section07 extends React.Component {
       {id: 3, name: "Blanca", age: 56}
     ],
     showPersons: false
+  }
+
+  static getDerivedStateFromProps(props, state){
+    console.log("[Section07.js] 2) getDerivedStateFromProps()", props);
+    return state;
+  };
+
+  componentDidMount() {
+    console.log("[Section07.js] 4) componentDidMount()");
   }
 
   deletePersonHandler = (personIndex) => {
@@ -43,6 +67,7 @@ class Section07 extends React.Component {
   }
 
   render() {
+    console.log("[Section07.js] 3) render()");
     let persons = null;
     if (this.state.showPersons) {
       persons = (

@@ -40,4 +40,3 @@ componentDidMount()
     DONT: dont call setState (update state), unless it's in the then block of a promise like after an http request,
           dont call setState synchronously.
 ˅
- 

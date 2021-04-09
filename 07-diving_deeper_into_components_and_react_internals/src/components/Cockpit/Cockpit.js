@@ -34,6 +34,7 @@ const Cockpit = (props) => {
   return (
       <div>
         <h1>Section 07</h1>
+        <h3>AppTitle: {props.title}</h3>
         <p className={titleClasses.join(" ")}>Diving Deeper into Components &
           React Internals</p>
 

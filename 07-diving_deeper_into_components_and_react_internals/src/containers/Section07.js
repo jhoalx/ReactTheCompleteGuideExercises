@@ -57,6 +57,7 @@ class Section07 extends React.Component {
     return (
         <div className="App">
           <Cockpit
+              title={this.props.appTitle}
               showPersons={this.state.showPersons}
               persons={this.state.persons}
               togglePersonsHandler={this.togglePersonsHandler}
